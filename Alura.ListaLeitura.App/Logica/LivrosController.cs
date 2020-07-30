@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Alura.ListaLeitura.App.Logica
 {
-    public class LivrosLogica
+    public class LivrosController
     {
         
         public static string CarregaLista(IEnumerable<Livro> livros)
@@ -59,6 +59,10 @@ namespace Alura.ListaLeitura.App.Logica
             return context.Response.WriteAsync(livro.Detalhes());
         }
 
+        public string  Teste()
+        {
+            return "nova funcionalidade implementada!";
+        }
         
     }
 }

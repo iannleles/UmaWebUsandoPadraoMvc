@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Alura.ListaLeitura.App.Logica
 {
-    public class CadastroLogica
+    public class CadastroController
     {
         
         public static Task Incluir(HttpContext context)

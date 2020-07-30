@@ -12,23 +12,20 @@ namespace Alura.ListaLeitura.App.Mvc
     {
         public static Task TratamentoPadrao(HttpContext context)
         {
-            // rota padrao:  / <classe> <logica>/ Meto
+            //rota padrão: /<Classe>Logica/Metodo
+            //{classe}/{metodo}
 
-            // {classe}/{metodo}
             var classe = Convert.ToString(context.GetRouteValue("classe"));
             var nomeMetodo = Convert.ToString(context.GetRouteValue("metodo"));
 
             var nomeCompleto = $"Alura.ListaLeitura.App.Logica.{classe}Logica";
 
-            var tipo = Type.GetType(classe);
+            var tipo = Type.GetType(nomeCompleto);
             var metodo = tipo.GetMethods().Where(m => m.Name == nomeMetodo).First();
-
             var requestDelegate = (RequestDelegate)Delegate.CreateDelegate(typeof(RequestDelegate), metodo);
 
             return requestDelegate.Invoke(context);
-             
+
         }
-
-
     }
 }
