@@ -27,7 +27,7 @@ namespace Alura.ListaLeitura.App.Logica
         {
 
             // var html = HtmlUtils.CarregaArquivoHTML("formulario");
-            var html = new ViewResult { ViewName = "formulario.html"};
+            var html = new ViewResult { ViewName = "formulario"};
             return html;
         }
         
